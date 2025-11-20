@@ -112,7 +112,7 @@ function M.get(c, opts)
     debugBreakpoint             = { bg = Util.blend_bg(c.info, 0.1), fg = c.info },
     debugPC                     = { bg = c.bg_sidebar },
     dosIniLabel                 = "@property",
-    helpCommand                 = { bg = c.terminal_black, fg = c.blue },
+    helpCommand                 = { bg = c.subtle_bg, fg = c.blue },
     htmlH1                      = { fg = c.magenta, bold = true },
     htmlH2                      = { fg = c.blue, bold = true },
     qfFileName                  = { fg = c.blue },

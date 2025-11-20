@@ -99,7 +99,7 @@ function M.get(c, opts)
     Structure                   = { fg = c.yellow },
     Typedef                     = { fg = c.yellow },
     Special                     = { fg = c.cyan },
-    SpecialChar                 = { fg = c.base0F },
+    SpecialChar                 = { fg = c.special_char },
     Tag                         = { fg = c.red },
     Delimiter                   = { fg = c.fg },
     SpecialComment              = { fg = c.comment, style = opts.styles.comments },

@@ -49,23 +49,7 @@ local default_palette = {
 	-- Git colors will be calculated from the palette colors above
 	git = {},
 
-	-- Base16 compatibility (deprecated, kept for backward compatibility)
-	base00 = "#060B1E",
-	base01 = "#6d7db6",
-	base02 = "#060B1E",
-	base03 = "#6d7db6",
-	base04 = "#F99957",
-	base05 = "#ffcead",
-	base06 = "#ffcead",
-	base07 = "#F99957",
-	base08 = "#ED5B5A",
-	base09 = "#faaaa9",
-	base0A = "#E9BB4F",
-	base0B = "#92a593",
-	base0C = "#a3bfd1",
-	base0D = "#7d82d9",
-	base0E = "#c89dc1",
-	base0F = "#f7dc9c",
+    special_char = "#f7dc9c",
 }
 
 ---@param opts? ethereal.Config
@@ -78,69 +62,10 @@ function M.setup(opts)
 
 	if opts.colors and next(opts.colors) then
 		colors = vim.tbl_deep_extend("force", colors, opts.colors)
-
-		-- Map base16 colors to semantic names AND all variants if base16 colors were provided
-		if opts.colors.base00 then
-			colors.bg = opts.colors.base00
-			colors.bg_dark = opts.colors.base00
-			colors.bg_dark1 = opts.colors.base00
-		end
-		if opts.colors.base01 then
-			colors.terminal_black = opts.colors.base01
-		end
-		if opts.colors.base02 then
-			colors.bg_highlight = opts.colors.base02
-		end
-		if opts.colors.base03 then
-			colors.comment = opts.colors.base03
-			colors.dark3 = opts.colors.base03
-			colors.fg_gutter = opts.colors.base03 -- Line numbers should be visible like comments
-		end
-		if opts.colors.base04 then
-			colors.dark5 = opts.colors.base04
-			colors.fg_dark = opts.colors.base04
-		end
-		if opts.colors.base05 then
-			colors.fg = opts.colors.base05
-		end
-		if opts.colors.base08 then
-			colors.red = opts.colors.base08
-			colors.red1 = opts.colors.base08
-		end
-		if opts.colors.base09 then
-			colors.orange = opts.colors.base09
-		end
-		if opts.colors.base0A then
-			colors.yellow = opts.colors.base0A
-		end
-		if opts.colors.base0B then
-			colors.green = opts.colors.base0B
-			colors.green1 = opts.colors.base0B
-			colors.green2 = opts.colors.base0B
-		end
-		if opts.colors.base0C then
-			colors.cyan = opts.colors.base0C
-			colors.teal = opts.colors.base0C
-			colors.blue5 = opts.colors.base0C
-			colors.blue6 = opts.colors.base0C
-		end
-		if opts.colors.base0D then
-			colors.blue = opts.colors.base0D
-			colors.blue1 = opts.colors.base0D
-			colors.blue2 = opts.colors.base0D
-		end
-		if opts.colors.base0E then
-			colors.purple = opts.colors.base0E
-			colors.magenta = opts.colors.base0E
-			colors.magenta2 = opts.colors.base0E
-		end
-		if opts.colors.base0F then
-			-- Brown/deprecated color - no direct mapping needed
-		end
 	end
 
-	Util.bg = colors.bg or colors.base00
-	Util.fg = colors.fg or colors.base05
+	Util.bg = colors.bg
+	Util.fg = colors.fg
 
 	colors.none = "NONE"
 

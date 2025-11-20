@@ -21,8 +21,6 @@ M.defaults = {
 	dim_inactive = false, -- dims inactive windows
 	lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
 
-	-- Legacy base16 color override support
-	-- Allows direct color injection for all base16 colors
 	colors = {},
 
 	--- You can override specific color groups to use other groups or a hex color

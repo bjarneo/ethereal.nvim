@@ -12,7 +12,7 @@ require("aether").load({
 		base07 = "#F99957", -- Light background
 
 		-- Accent colors (base08-base0F)
-		base08 = "#ED5B5A", -- Variables, errors, red
+		base08 = "#8e93de", -- Variables, errors, red
 		base09 = "#faaaa9", -- Integers, constants, orange
 		base0A = "#E9BB4F", -- Classes, types, yellow
 		base0B = "#92a593", -- Strings, green
